@@ -23,7 +23,6 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
         rect.size.width -= 200
         rect.origin.x += 100
         rect.origin.y += 120
-        CGRectInset(rect, 80, 80)
         return rect
     }
     
@@ -37,7 +36,7 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
     func randomLocation(rect: CGRect) -> CGPoint {
         let x: CGFloat = CGFloat(arc4random_uniform(UInt32(CGRectGetWidth(rect))))
         let y: CGFloat = CGFloat(arc4random_uniform(UInt32(CGRectGetHeight(rect))))
-        return CGPointMake(x, y)
+        return CGPointMake(x + rect.origin.x, y + rect.origin.y)
     }
     
 
