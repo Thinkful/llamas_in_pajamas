@@ -40,17 +40,6 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
 
     func setup() {
         var rect = playRect()
-
-        func addPyjama(pyjama: Pyjama) {
-            pyjama.position = randomLocation(rect)
-            pyjamaCount++
-            addChild(pyjama)
-        }
-        
-        func addLion(lion: Lion) {
-            lion.position = randomLocation(rect)
-            addChild(lion)
-        }
         
         // add background
         let background = SKSpriteNode(texture: SKTexture(imageNamed: "background"))
@@ -120,7 +109,18 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
     }
     
     func addCharacters() {
+        var rect = playRect()
         
+        func addPyjama(pyjama: Pyjama) {
+            pyjama.position = randomLocation(rect)
+            pyjamaCount++
+            addChild(pyjama)
+        }
+        
+        func addLion(lion: Lion) {
+            lion.position = randomLocation(rect)
+            addChild(lion)
+        }        
     }
     
     func lionContacted(lion: Lion) {
