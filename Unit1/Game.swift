@@ -140,6 +140,16 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
             llama.points += 10
         case .blue:
             llama.points += 5
+        case .purple:
+            llama.points += 2
+        case .orange:
+            llama.points += 1
+        case .yellow:
+            llama.points += 1
+        case .black:
+            llama.points += 1
+        case .brown:
+            llama.points += 1
         case .none:
             llama.points += 1
         }

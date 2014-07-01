@@ -18,6 +18,11 @@ enum PyjamaColor {
     case red
     case green
     case blue
+    case purple
+    case orange
+    case yellow
+    case black
+    case brown
 }
 
 var kLoadPyjamaAssetsOnceToken: dispatch_once_t = 0
@@ -36,6 +41,16 @@ class Pyjama : GameCharacter {
             self.color = UIColor(hex: "3CD5AF")
         case .blue:
             self.color = UIColor(hex: "0099FF")
+        case .purple:
+            self.color = UIColor(hex: "FF00FF")
+        case .orange:
+            self.color = UIColor(hex: "FFA500")
+        case .yellow:
+            self.color = UIColor(hex: "FFFF00")
+        case .black:
+            self.color = UIColor(hex: "000000")
+        case .brown:
+            self.color = UIColor(hex: "A52A2A")
         }
     }
     }
