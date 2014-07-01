@@ -31,8 +31,15 @@ class Lion : GameCharacter {
         self.physicsBody.contactTestBitMask = 0
         self.physicsBody.collisionBitMask = CharacterType.edge.toRaw()
         
+        self.animate()
+        
     }
 
+    func animate() {
+        let animationAction = SKAction.animateWithTextures(kLionAnimationFrames, timePerFrame: 0.2, resize: true, restore: false)
+        self.runAction(SKAction.repeatActionForever(animationAction))
+    }
+    
     override func isLion() -> Bool {
         return true;
     }

@@ -36,9 +36,21 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
         let y: CGFloat = CGFloat(arc4random_uniform(UInt32(CGRectGetHeight(rect))))
         return CGPointMake(x, y)
     }
+    
 
     func setup() {
         var rect = playRect()
+
+        func addPyjama(pyjama: Pyjama) {
+            pyjama.position = randomLocation(rect)
+            pyjamaCount++
+            addChild(pyjama)
+        }
+        
+        func addLion(lion: Lion) {
+            lion.position = randomLocation(rect)
+            addChild(lion)
+        }
         
         // add background
         let background = SKSpriteNode(texture: SKTexture(imageNamed: "background"))
@@ -50,42 +62,8 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
         llama.position = CGPoint(x:CGRectGetMidX(rect), y:CGRectGetMidY(rect));
         addChild(llama)
         
-        // *** student will write code here
-        
-        // create 2 red pyjamas
-        for i in 1...2 {
-            let pyjama = Pyjama()
-            pyjama.position = randomLocation(rect)
-            pyjama.pyjamaColor = .red
-            pyjamaCount++
-            addChild(pyjama)
-        }
-        
-        // create 3 green pyjamas
-        for i in 1...3 {
-            let pyjama = Pyjama()
-            pyjama.position = randomLocation(rect)
-            pyjama.pyjamaColor = .green
-            pyjamaCount++
-            addChild(pyjama)
-        }
-        
-        // create 4 blue pyjamas
-        for i in 1...4 {
-            let pyjama = Pyjama()
-            pyjama.position = randomLocation(rect)
-            pyjama.pyjamaColor = .blue
-            pyjamaCount++
-            addChild(pyjama)
-        }
+        addCharacters()
 
-        // create 3 lions
-        for i in 1...3 {
-            let lion = Lion()
-            lion.position = randomLocation(rect)
-            addChild(lion)
-            lion.runningSpeed = 15
-        }
     }
     
     func restart() {
@@ -138,22 +116,15 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
             pyjamaContacted(character as Pyjama)
         }
         
-        // TODO: display score/health/time on screen
         println("health: \(llama.health) points: \(llama.points)")
     }
     
+    func addCharacters() {
+        
+    }
+    
     func lionContacted(lion: Lion) {
-        // *** student will write code here
-
-        // update health
-        llama.health -= 30
-
-        if llama.health <= 0 {
-            llamaDied()
-        }
-        else if llama.health < 30 {
-            llama.pulse()
-        }
+        
     }
 
     func pyjamaContacted(pyjama: Pyjama) {
@@ -174,8 +145,6 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
         // make pyjama disappear
         pyjama.removeFromParent()
         
-        // make llama wear pyjamas
-        // TODO: implement Llama.wearPyjama(pyjama: Pyjama) once graphics are ready
         
         // update count of pyjamas remaining
         pyjamaCount--
