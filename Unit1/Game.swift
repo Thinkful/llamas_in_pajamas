@@ -19,8 +19,10 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
     
     func playRect() -> CGRect {
         var rect = frame
-        rect.size.height -= 440
+        rect.size.height -= 240
         rect.size.width -= 200
+        rect.origin.x += 100
+        rect.origin.y += 120
         CGRectInset(rect, 80, 80)
         return rect
     }
@@ -121,7 +123,7 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
         func addLion(lion: Lion) {
             lion.position = randomLocation(rect)
             addChild(lion)
-        }        
+        }
     }
     
     func lionContacted(lion: Lion) {
