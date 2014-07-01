@@ -20,6 +20,7 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
     func playRect() -> CGRect {
         var rect = frame
         rect.size.height -= 240
+        rect.size.width -= 200
         CGRectInset(rect, 80, 80)
         return rect
     }
