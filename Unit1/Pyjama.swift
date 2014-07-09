@@ -65,10 +65,16 @@ class Pyjama : GameCharacter {
         self.physicsBody.collisionBitMask = 0
         self.color = UIColor(hex: "FFFFFF")
         self.colorBlendFactor = 1.0
+        self.animate()
     }
     
     override func isPyjama() -> Bool {
         return true;
+    }
+  
+    func animate() {
+        let animationAction = SKAction.animateWithTextures(kPyjamaAnimationFrames, timePerFrame: 0.3, resize: true, restore: false)
+        self.runAction(SKAction.repeatActionForever(animationAction))
     }
 
     class func loadAssets() {
