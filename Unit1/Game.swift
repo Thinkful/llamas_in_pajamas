@@ -119,7 +119,7 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
         println("game completed in \(diff) seconds")
         
         // Remove timers from Lions
-        for child in self.children {
+        for child: AnyObject in self.children {
             if child.isKindOfClass(GameCharacter) {
                 let gChild = child as GameCharacter
                 if gChild.isLion() {
