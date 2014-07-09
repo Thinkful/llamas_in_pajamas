@@ -89,21 +89,21 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
         // Add red pyjamas
         for _ in 0..3 {
             let pyjama = Pyjama()
-            pyjama.color = UIColor(hex: "#FF0000")
+            pyjama.pyjamaColor = PyjamaColor.red
             addPyjama(pyjama)
         }
       
         // Add blue pyjamas
         for _ in 0..2 {
             let pyjama = Pyjama()
-            pyjama.color = UIColor(hex: "#0000FF")
+            pyjama.pyjamaColor = PyjamaColor.blue
             addPyjama(pyjama)
         }
       
         // Add green pyjamas
         for _ in 0..4 {
             let pyjama = Pyjama()
-            pyjama.color = UIColor(hex: "#00FF00")
+            pyjama.pyjamaColor = PyjamaColor.green
             addPyjama(pyjama)
         }
       
@@ -138,7 +138,10 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
             let destination = CGVectorMakeFromCGPoints(from: llama.position,
                                                        to: touch.locationInNode(self))
 
-            
+
+            // So many magic numbers in here... eventually this needs to be
+            // refactored to actually calculate the correct momentum needed
+
             let momentumMagnitude = sqrt(llama.physicsBody.linearDamping *
                                          CGVectorGetMagnitude(destination) *
                                          llama.physicsBody.mass * 50)
@@ -151,10 +154,10 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
     }
 
     func didBeginContact(contact: SKPhysicsContact!) {
-      
+
         if contact.bodyA.node == llama {
             let otherNode = contact.bodyB.node
-          
+
             if !otherNode.isKindOfClass(GameCharacter) {
                 return
             }
