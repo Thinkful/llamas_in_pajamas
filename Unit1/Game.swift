@@ -142,9 +142,9 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
             // So many magic numbers in here... eventually this needs to be
             // refactored to actually calculate the correct momentum needed
 
-            let momentumMagnitude = sqrt(llama.physicsBody.linearDamping *
-                                         CGVectorGetMagnitude(destination) *
-                                         llama.physicsBody.mass * 50)
+            let momentumMagnitude = CGFloat(sqrt(CDouble(llama.physicsBody.linearDamping) *
+                                         CDouble(CGVectorGetMagnitude(destination)) *
+                                         CDouble(llama.physicsBody.mass) * CDouble(50)))
 
             let impulseVector = CGVectorNormalizedFromVector(destination) * momentumMagnitude
             llama.physicsBody.applyImpulse(-llama.physicsBody.velocity * llama.physicsBody.mass)

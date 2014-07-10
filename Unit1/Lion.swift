@@ -23,7 +23,7 @@ class Lion : GameCharacter {
                 timer.invalidate()
             }
 
-            self.animationTimer = NSTimer.scheduledTimerWithTimeInterval(CGFloat(arc4random_uniform(10) + 1),
+            self.animationTimer = NSTimer.scheduledTimerWithTimeInterval(CDouble(arc4random_uniform(10) + 1),
                 target: self, selector: NSSelectorFromString("applyRandomMovement"),
                 userInfo: nil, repeats: true)
         }

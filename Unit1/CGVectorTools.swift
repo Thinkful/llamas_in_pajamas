@@ -31,7 +31,7 @@ import SpriteKit
 }
 
 func CGVectorGetMagnitude(vector: CGVector) -> CGFloat {
-    return sqrt(pow(vector.dx, 2) + pow(vector.dy, 2))
+    return CGFloat(sqrt(pow(CDouble(vector.dx), 2) + pow(CDouble(vector.dy), 2)))
 }
 
 func CGVectorNormalizedFromVector(vector: CGVector) -> CGVector {
