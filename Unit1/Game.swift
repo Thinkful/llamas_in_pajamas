@@ -88,31 +88,7 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
     }
 
     func addCharacters() {
-        // Add red pyjamas
-        for _ in 0..3 {
-            let pyjama = Pyjama()
-            pyjama.pyjamaColor = PyjamaColor.red
-            addPyjama(pyjama)
-        }
-      
-        // Add blue pyjamas
-        for _ in 0..2 {
-            let pyjama = Pyjama()
-            pyjama.pyjamaColor = PyjamaColor.blue
-            addPyjama(pyjama)
-        }
-      
-        // Add green pyjamas
-        for _ in 0..4 {
-            let pyjama = Pyjama()
-            pyjama.pyjamaColor = PyjamaColor.green
-            addPyjama(pyjama)
-        }
-      
-        for _ in 0..2 {
-            let lion = Lion()
-            addLion(lion, withSpeed: Int(arc4random_uniform(200) + 100))
-        }
+        // Implement this method!
     }
 
     func gameCompleted() {
@@ -193,35 +169,7 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
     }
 
     func pyjamaContacted(pyjama: Pyjama) {
-        // *** student will write code here
-
-        // update the score based on pyjama color
-        switch pyjama.pyjamaColor {
-        case .red:
-            llama.points += 20
-        case .green:
-            llama.points += 10
-        case .blue:
-            llama.points += 5
-        case .purple:
-            llama.points += 2
-        case .orange:
-            llama.points += 1
-        case .yellow:
-            llama.points += 1
-        case .black:
-            llama.points += 1
-        case .brown:
-            llama.points += 1
-        case .none:
-            llama.points += 1
-        }
-
-        // make pyjama disappear
-        pyjama.removeFromParent()
-
-        // update count of pyjamas remaining
-        pyjamaCount--
+        // Implement this method!
     }
 
     func checkGameComplete() {
