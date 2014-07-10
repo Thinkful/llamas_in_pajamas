@@ -151,7 +151,7 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
             let impulseVector = CGVectorNormalizedFromVector(destination) * momentumMagnitude
             llama.physicsBody.applyImpulse(-llama.physicsBody.velocity * llama.physicsBody.mass)
             llama.physicsBody.applyImpulse(impulseVector)
-            llama.walkAnimate(Int(momentumMagnitude / 12))
+            llama.walkAnimate(Int(momentumMagnitude / 10))
         }
     }
 
