@@ -71,21 +71,23 @@ class Game: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
         setup()
     }
 
-    func addCharacters() {
+    func addCharacter(character: GameCharacter) {
         let rect = playRect()
-        
-        func addPyjama(pyjama: Pyjama) {
-            pyjama.position = randomLocation(rect)
-            pyjamaCount++
-            addChild(pyjama)
-        }
-        
-        func addLion(lion: Lion, withSpeed speed: Int) {
-            lion.position = randomLocation(rect)
-            addChild(lion)
-            lion.runningSpeed = speed
-        }
-      
+        character.position = randomLocation(rect)
+        addChild(character)
+    }
+
+    func addLion(lion: Lion, withSpeed speed: Int) {
+        addCharacter(lion)
+        lion.runningSpeed = speed
+    }
+
+    func addPyjama(pyjama: Pyjama) {
+        addCharacter(pyjama)
+        pyjamaCount++
+    }
+
+    func addCharacters() {
         // Add red pyjamas
         for _ in 0..3 {
             let pyjama = Pyjama()
