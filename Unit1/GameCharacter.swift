@@ -17,7 +17,7 @@ enum CharacterType: UInt32 {
 
 class GameCharacter : SKSpriteNode {
     
-    init(#texture: SKTexture!, #color: UIColor!, #size: CGSize) {
+    init(texture: SKTexture!, color: UIColor!, size: CGSize) {
         
         super.init(texture: texture, color: color, size: size)
         
@@ -31,8 +31,8 @@ class GameCharacter : SKSpriteNode {
         self.physicsBody.linearDamping = 0
         self.physicsBody.angularDamping = 0
     }
-    
-    init(#texture: SKTexture!) {
+
+    init(texture: SKTexture!) {
         super.init(texture: texture)
     }
 

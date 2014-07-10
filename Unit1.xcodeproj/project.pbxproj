@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0F5821196DAC7300273138 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F5820196DAC7300273138 /* GameDelegate.swift */; };
+		4D3D7099196B3CBB002A4F8A /* CGVectorTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3D7098196B3CBB002A4F8A /* CGVectorTools.swift */; };
+		4D3D709B196B9B8D002A4F8A /* llama-idle.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4D3D709A196B9B8D002A4F8A /* llama-idle.atlas */; };
+		4D3D709D196B9B98002A4F8A /* llama-walk.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4D3D709C196B9B98002A4F8A /* llama-walk.atlas */; };
 		69131DD2194A699A000759D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69131DD1194A699A000759D3 /* AppDelegate.swift */; };
 		69131DD4194A699A000759D3 /* Game.sks in Resources */ = {isa = PBXBuildFile; fileRef = 69131DD3194A699A000759D3 /* Game.sks */; };
 		69131DD6194A699A000759D3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69131DD5194A699A000759D3 /* Game.swift */; };
@@ -17,7 +21,6 @@
 		69644A131953899300265C83 /* Pyjama.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69644A121953899300265C83 /* Pyjama.swift */; };
 		69644A17195399E800265C83 /* Lion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69644A16195399E800265C83 /* Lion.swift */; };
 		69644A191954B96C00265C83 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69644A181954B96C00265C83 /* UIColor+Hex.swift */; };
-		69644A1B1954D82600265C83 /* llama.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 69644A1A1954D82600265C83 /* llama.atlas */; };
 		696889E2195A064900F941C3 /* lion.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 696889E1195A064900F941C3 /* lion.atlas */; };
 		696889E4195A065100F941C3 /* pyjama.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 696889E3195A065100F941C3 /* pyjama.atlas */; };
 		69B662B51959FF1E005B92CE /* GameCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B662B41959FF1E005B92CE /* GameCharacter.swift */; };
@@ -34,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D0F5820196DAC7300273138 /* GameDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
+		4D3D7098196B3CBB002A4F8A /* CGVectorTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGVectorTools.swift; sourceTree = "<group>"; };
+		4D3D709A196B9B8D002A4F8A /* llama-idle.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "llama-idle.atlas"; sourceTree = "<group>"; };
+		4D3D709C196B9B98002A4F8A /* llama-walk.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "llama-walk.atlas"; sourceTree = "<group>"; };
 		69131DCC194A699A000759D3 /* Unit1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unit1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69131DD0194A699A000759D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69131DD1194A699A000759D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +54,6 @@
 		69644A121953899300265C83 /* Pyjama.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pyjama.swift; sourceTree = "<group>"; };
 		69644A16195399E800265C83 /* Lion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lion.swift; sourceTree = "<group>"; };
 		69644A181954B96C00265C83 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
-		69644A1A1954D82600265C83 /* llama.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = llama.atlas; sourceTree = "<group>"; };
 		696889E1195A064900F941C3 /* lion.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = lion.atlas; sourceTree = "<group>"; };
 		696889E3195A065100F941C3 /* pyjama.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = pyjama.atlas; sourceTree = "<group>"; };
 		69B662B41959FF1E005B92CE /* GameCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCharacter.swift; sourceTree = "<group>"; };
@@ -99,6 +105,8 @@
 				69131DCF194A699A000759D3 /* Supporting Files */,
 				696889E5195A0C7B00F941C3 /* assets */,
 				69644A181954B96C00265C83 /* UIColor+Hex.swift */,
+				4D3D7098196B3CBB002A4F8A /* CGVectorTools.swift */,
+				4D0F5820196DAC7300273138 /* GameDelegate.swift */,
 			);
 			path = Unit1;
 			sourceTree = "<group>";
@@ -118,9 +126,10 @@
 		696889E5195A0C7B00F941C3 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				4D3D709C196B9B98002A4F8A /* llama-walk.atlas */,
+				4D3D709A196B9B8D002A4F8A /* llama-idle.atlas */,
 				69131DDC194A699A000759D3 /* Images.xcassets */,
 				696889E1195A064900F941C3 /* lion.atlas */,
-				69644A1A1954D82600265C83 /* llama.atlas */,
 				696889E3195A065100F941C3 /* pyjama.atlas */,
 			);
 			name = assets;
@@ -208,10 +217,11 @@
 			files = (
 				696889E2195A064900F941C3 /* lion.atlas in Resources */,
 				69131DDD194A699A000759D3 /* Images.xcassets in Resources */,
-				69644A1B1954D82600265C83 /* llama.atlas in Resources */,
 				69131DD4194A699A000759D3 /* Game.sks in Resources */,
+				4D3D709D196B9B98002A4F8A /* llama-walk.atlas in Resources */,
 				69131DDB194A699A000759D3 /* Main.storyboard in Resources */,
 				696889E4195A065100F941C3 /* pyjama.atlas in Resources */,
+				4D3D709B196B9B8D002A4F8A /* llama-idle.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,10 +241,12 @@
 			files = (
 				69644A191954B96C00265C83 /* UIColor+Hex.swift in Sources */,
 				69131DD6194A699A000759D3 /* Game.swift in Sources */,
+				4D0F5821196DAC7300273138 /* GameDelegate.swift in Sources */,
 				69644A131953899300265C83 /* Pyjama.swift in Sources */,
 				69644A111953898100265C83 /* Llama.swift in Sources */,
 				69644A17195399E800265C83 /* Lion.swift in Sources */,
 				69131DD8194A699A000759D3 /* GameViewController.swift in Sources */,
+				4D3D7099196B3CBB002A4F8A /* CGVectorTools.swift in Sources */,
 				69131DD2194A699A000759D3 /* AppDelegate.swift in Sources */,
 				69B662B51959FF1E005B92CE /* GameCharacter.swift in Sources */,
 			);

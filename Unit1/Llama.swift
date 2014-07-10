@@ -9,13 +9,18 @@ import Foundation
 import SpriteKit
 
 var kLoadLlamaAssetsOnceToken: dispatch_once_t = 0
-var kLlamaAnimationFrames = SKTexture[]()
+var kLlamaIdleAnimationFrames = SKTexture[]()
+var kLlamaWalkAnimationFrames = SKTexture[]()
 
 class Llama : GameCharacter {
-    
+  
     var lives = 3
     var points: Int = 0
-    var health: Int = 100
+    var health: Int = 100 {
+    didSet {
+      
+    }
+    }
     
 //    init(#texture: SKTexture!, #color: UIColor!, #size: CGSize) {
 //        super.init(texture: texture, color: color, size: size)
@@ -28,19 +33,21 @@ class Llama : GameCharacter {
     
     convenience init() {
         
-        self.init(texture: kLlamaAnimationFrames[0])
+        self.init(texture: kLlamaIdleAnimationFrames[0])
 
         self.name = "Llama"
-        self.zPosition = 1
         self.physicsBody.categoryBitMask = CharacterType.llama.toRaw()
         self.physicsBody.contactTestBitMask = CharacterType.pyjama.toRaw() | CharacterType.lion.toRaw()
         self.physicsBody.collisionBitMask = CharacterType.edge.toRaw()
+        self.physicsBody.linearDamping = 1.5
+        self.physicsBody.restitution = 0.1
         self.animate()
     }
 
     class func loadAssets() {
         dispatch_once(&kLoadLlamaAssetsOnceToken) {
-            kLlamaAnimationFrames = self.framesFromAtlas(named: "llama")
+            kLlamaIdleAnimationFrames = self.framesFromAtlas(named: "llama-idle")
+            kLlamaWalkAnimationFrames = self.framesFromAtlas(named: "llama-walk")
         }
     }
 
@@ -53,8 +60,13 @@ class Llama : GameCharacter {
     }
     
     func animate() {
-        let animationAction = SKAction.animateWithTextures(kLlamaAnimationFrames, timePerFrame: 0.2, resize: true, restore: false)
+        let animationAction = SKAction.animateWithTextures(kLlamaIdleAnimationFrames, timePerFrame: 0.05, resize: true, restore: false)
         self.runAction(SKAction.repeatActionForever(animationAction))
+    }
+  
+    func walkAnimate(duration: Int) {
+        let animationAction = SKAction.animateWithTextures(kLlamaWalkAnimationFrames, timePerFrame: 0.05, resize: true, restore: false)
+        self.runAction(SKAction.repeatAction(animationAction, count: duration), completion: animate)
     }
 
     func pulse() {
